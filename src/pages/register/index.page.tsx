@@ -1,6 +1,6 @@
 import { Container, Form, FormError, Header } from './styles'
 import { Button, Heading, MultiStep, Text, TextInput } from '@ignite-ui/react'
-import { ArrowRight } from 'phosphor-react'
+import { ArrowRight, Target } from 'phosphor-react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -20,9 +20,11 @@ const registerFormSchema = z.object({
   name: z.string().min(3, { message: 'O nome deve conter no mínimo 3 letras' }),
 })
 
+a
+
 type RegisterFormData = z.infer<typeof registerFormSchema>
 
-export default function Register(props) {
+export default function Register() {
   const {
     register,
     handleSubmit,
@@ -46,8 +48,6 @@ export default function Register(props) {
         name: data.name,
         username: data.username,
       })
-
-      await router.push('/register/connect-calendar')
     } catch (err) {
       if (err instanceof AxiosError && err?.response?.data?.message) {
         alert(err.response.data.message)
@@ -61,6 +61,8 @@ export default function Register(props) {
     <Container>
       <Header>
         <Heading as="strong"> Bem vindo ao Ignite Call! </Heading>
+        <a href="" target="_blank"></a>
+        <hr />
         <Text>
           Precisamos de algumas informações para criar seu perfil! Ah, você pode
           editar essas informações depois.
