@@ -40,7 +40,7 @@ export default function Reagister() {
             <Button
               variant="secondary"
               size="sm"
-              onClick={handleConnectCalendar()}
+              onClick={handleConnectCalendar}
             >
               Conectar
               <ArrowRight />
