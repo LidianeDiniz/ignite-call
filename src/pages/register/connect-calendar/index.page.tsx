@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'phosphor-react'
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
 
-export default function Reagister() {
+export default function Register() {
   // async function handleRegister() {}
   const session = useSession()
   const router = useRouter()
