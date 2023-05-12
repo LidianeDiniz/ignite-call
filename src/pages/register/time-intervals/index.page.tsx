@@ -15,20 +15,11 @@ import {
   IntervalItem,
 } from './styles'
 import { ArrowRight } from 'phosphor-react'
-import { z } from 'zod'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import { getWeekDays } from '../../../utils/get-wek-days'
 
-const timeIntervalsFormSchema = z.object({})
-
 export default function TimeIntervals() {
-  const {
-    register,
-    handleSubmit,
-    control,
-    watch,
-    formState: { isSubmitting, erros },
-  } = useForm({
+  const { register, handleSubmit, control, watch } = useForm({
     defaultValues: {
       intervals: [
         { weekDay: 0, enabled: false, startTime: '08:00', endTime: '18:00' },
